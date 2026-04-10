@@ -33,10 +33,11 @@ export function ColorBoard({
   onSlotDrop,
 }: ColorBoardProps) {
   const connected = solved && !isDragActive;
+  const boardMinWidth = Math.max(320, shades.length * 76 + (shades.length + 1) * 18);
 
   return (
     <div className="overflow-x-auto pb-4 lg:overflow-x-visible">
-      <div className="min-w-[760px] lg:min-w-0">
+      <div style={{ minWidth: boardMinWidth }}>
         <div
           className="relative rounded-[24px] border-4 p-3"
           style={{

@@ -1,13 +1,35 @@
-import { buildPalette } from "../data/tailwindPalettes";
-import type { SortDirection, TailwindColorFamily } from "../types/game";
+import type {
+  GameLevel,
+  SortDirection,
+  TailwindColorFamily,
+  WinsByLevel,
+} from "../types/game";
 
-export const GAME_CONFIG: {
-  colorFamily: TailwindColorFamily;
-  initialDirection: SortDirection;
-} = {
-  // Change this one value to retheme the prototype with another Tailwind ramp.
-  colorFamily: "emerald",
-  initialDirection: "light-to-dark",
+export const TAILWIND_COLOR_FAMILIES: TailwindColorFamily[] = [
+  "blue",
+  "emerald",
+  "violet",
+  "slate",
+];
+
+export const GAME_LEVELS: GameLevel[] = [
+  { id: 1, shadeCount: 3, winsToAdvance: 3 },
+  { id: 2, shadeCount: 6, winsToAdvance: 3 },
+  { id: 3, shadeCount: 10, winsToAdvance: null },
+];
+
+export const EMPTY_WINS_BY_LEVEL: WinsByLevel = {
+  3: 0,
+  6: 0,
+  10: 0,
 };
 
-export const ACTIVE_PALETTE = buildPalette(GAME_CONFIG.colorFamily);
+export const GAME_CONFIG: {
+  initialDirection: SortDirection;
+  progressStorageKey: string;
+  roundTransitionMs: number;
+} = {
+  initialDirection: "light-to-dark",
+  progressStorageKey: "rang-progress",
+  roundTransitionMs: 1400,
+};

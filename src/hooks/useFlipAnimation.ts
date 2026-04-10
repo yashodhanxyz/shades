@@ -24,6 +24,10 @@ export function useFlipAnimation<T extends Key>(items: T[]) {
     );
   };
 
+  const resetPositions = () => {
+    previousRects.current = new Map();
+  };
+
   useLayoutEffect(() => {
     const nextRects = new Map<T, DOMRect>();
 
@@ -66,6 +70,7 @@ export function useFlipAnimation<T extends Key>(items: T[]) {
 
   return {
     registerItem,
+    resetPositions,
     snapshotPositions,
   };
 }

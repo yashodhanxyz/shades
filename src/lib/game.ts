@@ -1,4 +1,9 @@
-import type { Shade, SortDirection, ShadeTone } from "../types/game";
+import type {
+  LevelShadeCount,
+  Shade,
+  SortDirection,
+  ShadeTone,
+} from "../types/game";
 
 export function shuffleShades(shades: Shade[]) {
   const next = [...shades];
@@ -33,6 +38,19 @@ export function createShuffledBoard(shades: Shade[], direction: SortDirection) {
   }
 
   return next;
+}
+
+export function selectShadesForLevel(shades: Shade[], shadeCount: LevelShadeCount) {
+  if (shadeCount >= shades.length) {
+    return [...shades];
+  }
+
+  const lastIndex = shades.length - 1;
+  const selectedIndexes = Array.from({ length: shadeCount }, (_, index) =>
+    Math.round((index * lastIndex) / (shadeCount - 1)),
+  );
+
+  return selectedIndexes.map((index) => shades[index]!);
 }
 
 export function moveShade(shades: Shade[], draggedTone: ShadeTone, targetIndex: number) {

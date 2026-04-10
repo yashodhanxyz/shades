@@ -1,5 +1,11 @@
 import colors from "tailwindcss/colors";
-import { SHADE_STEPS, type GamePalette, type ShadeTone, type TailwindColorFamily } from "../types/game";
+import {
+  SHADE_STEPS,
+  type GamePalette,
+  type Shade,
+  type ShadeTone,
+  type TailwindColorFamily,
+} from "../types/game";
 
 const paletteLabels: Record<TailwindColorFamily, string> = {
   blue: "Blue",
@@ -15,6 +21,15 @@ const tailwindPalettes: Record<TailwindColorFamily, Record<ShadeTone, string>> =
   violet: colors.violet as Record<ShadeTone, string>,
 };
 
+export function buildGradient(shades: Shade[]) {
+  return `linear-gradient(90deg, ${shades
+    .map((shade, index) => {
+      const percentage = Math.round((index / (shades.length - 1)) * 100);
+      return `${shade.hex} ${percentage}%`;
+    })
+    .join(", ")})`;
+}
+
 export function buildPalette(family: TailwindColorFamily): GamePalette {
   const ramp = tailwindPalettes[family];
 
@@ -24,17 +39,10 @@ export function buildPalette(family: TailwindColorFamily): GamePalette {
     rank: index,
   }));
 
-  const gradient = `linear-gradient(90deg, ${shades
-    .map((shade, index) => {
-      const percentage = Math.round((index / (shades.length - 1)) * 100);
-      return `${shade.hex} ${percentage}%`;
-    })
-    .join(", ")})`;
-
   return {
     family,
     label: paletteLabels[family],
     shades,
-    gradient,
+    gradient: buildGradient(shades),
   };
 }
