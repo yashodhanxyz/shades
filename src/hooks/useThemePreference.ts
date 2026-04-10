@@ -26,6 +26,11 @@ export function useThemePreference() {
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = theme;
     window.localStorage.setItem(STORAGE_KEY, theme);
+
+    const favicon = document.getElementById("app-favicon");
+    if (favicon instanceof HTMLLinkElement) {
+      favicon.href = theme === "dark" ? "/favicon-dark.svg" : "/favicon.svg";
+    }
   }, [theme]);
 
   return { theme, setTheme };
