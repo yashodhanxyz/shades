@@ -24,6 +24,21 @@ export default function App() {
           <ColorOrderingGame theme={theme} onThemeChange={setTheme} />
         </div>
       </div>
+
+      <a
+        href="https://yashodhan.xyz/"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-3 right-3 z-20 rounded-full border-4 px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] transition-transform duration-150 hover:-translate-y-0.5 md:bottom-4 md:right-4"
+        style={{
+          borderColor: "var(--ink)",
+          backgroundColor: "var(--surface)",
+          color: "var(--ink)",
+          boxShadow: "5px 5px 0 var(--ink)",
+        }}
+      >
+        Built by Yashodhan
+      </a>
     </main>
   );
 }
