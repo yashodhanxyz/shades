@@ -3,6 +3,7 @@ import { cx } from "../lib/cx";
 import type { Shade, ShadeTone } from "../types/game";
 
 interface ColorCardProps {
+  index: number;
   shade: Shade;
   connected: boolean;
   isDragging: boolean;
@@ -11,9 +12,12 @@ interface ColorCardProps {
   registerNode: (node: HTMLDivElement | null) => void;
   onDragStart: (tone: ShadeTone, event: DragEvent<HTMLDivElement>) => void;
   onDragEnd: () => void;
+  onDragOver: (index: number, event: DragEvent<HTMLDivElement>) => void;
+  onDrop: (index: number) => void;
 }
 
 export function ColorCard({
+  index,
   shade,
   connected,
   isDragging,
@@ -22,6 +26,8 @@ export function ColorCard({
   registerNode,
   onDragStart,
   onDragEnd,
+  onDragOver,
+  onDrop,
 }: ColorCardProps) {
   const borderWidth = connected
     ? isFirst
@@ -38,6 +44,12 @@ export function ColorCard({
         ? "0 16px 16px 0"
         : "0"
     : "18px";
+
+  const getInsertionIndex = (event: DragEvent<HTMLDivElement>) => {
+    const { left, width } = event.currentTarget.getBoundingClientRect();
+    const midpoint = left + width / 2;
+    return event.clientX < midpoint ? index : index + 1;
+  };
 
   return (
     <div
@@ -62,6 +74,14 @@ export function ColorCard({
       }}
       onDragStart={(event) => onDragStart(shade.tone, event)}
       onDragEnd={onDragEnd}
+      onDragOver={(event) => {
+        event.preventDefault();
+        onDragOver(getInsertionIndex(event), event);
+      }}
+      onDrop={(event) => {
+        event.preventDefault();
+        onDrop(getInsertionIndex(event));
+      }}
     />
   );
 }

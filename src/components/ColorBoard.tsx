@@ -68,6 +68,7 @@ export function ColorBoard({
             {shades.map((shade, index) => (
               <Fragment key={shade.tone}>
                 <ColorCard
+                  index={index}
                   shade={shade}
                   connected={connected}
                   isDragging={draggedTone === shade.tone}
@@ -76,6 +77,8 @@ export function ColorBoard({
                   registerNode={registerCard(shade.tone)}
                   onDragStart={onDragStart}
                   onDragEnd={onDragEnd}
+                  onDragOver={onSlotDragOver}
+                  onDrop={onSlotDrop}
                 />
                 <DropSlot
                   index={index + 1}
