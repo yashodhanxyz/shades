@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ThemeMode } from "../types/theme";
 
-const STORAGE_KEY = "rang-theme";
+const STORAGE_KEY = "huethere-theme";
 
 function getInitialTheme(): ThemeMode {
   if (typeof window === "undefined") {

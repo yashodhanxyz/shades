@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rang.vercel.app/sitemap.xml
+Sitemap: https://huethere.vercel.app/sitemap.xml

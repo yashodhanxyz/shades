@@ -1,6 +1,6 @@
-# Rang
+# HueThere
 
-An experimental color-ordering game built with React, TypeScript, Vite, and Tailwind CSS.
+HueThere is an experimental color-ordering game built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## What it does
 

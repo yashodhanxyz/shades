@@ -30,6 +30,6 @@ export const GAME_CONFIG: {
   roundTransitionMs: number;
 } = {
   initialDirection: "light-to-dark",
-  progressStorageKey: "rang-progress",
+  progressStorageKey: "huethere-progress",
   roundTransitionMs: 1400,
 };

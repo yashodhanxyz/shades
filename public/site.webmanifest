@@ -1,6 +1,6 @@
 {
-  "name": "Rang",
-  "short_name": "Rang",
+  "name": "HueThere",
+  "short_name": "HueThere",
   "description": "A browser-based color sorting game with progressive 3, 6, and 10 shade levels.",
   "start_url": "/",
   "display": "standalone",
