@@ -1,0 +1,17 @@
+{
+  "name": "Rang",
+  "short_name": "Rang",
+  "description": "A browser-based color sorting game with progressive 3, 6, and 10 shade levels.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f8f8",
+  "theme_color": "#f8f8f8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

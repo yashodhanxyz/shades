@@ -5,6 +5,7 @@ type Key = string | number;
 export function useFlipAnimation<T extends Key>(items: T[]) {
   const elementMap = useRef(new Map<T, HTMLElement>());
   const previousRects = useRef(new Map<T, DOMRect>());
+  const itemsSignature = items.map((item) => String(item)).join("|");
 
   const registerItem = (key: T) => (node: HTMLElement | null) => {
     if (node) {
@@ -66,7 +67,7 @@ export function useFlipAnimation<T extends Key>(items: T[]) {
     });
 
     previousRects.current = nextRects;
-  }, [items]);
+  }, [itemsSignature]);
 
   return {
     registerItem,

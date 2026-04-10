@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8f8f8" />
+      <stop offset="100%" stop-color="#e6ebf2" />
+    </linearGradient>
+    <linearGradient id="ramp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dbeafe" />
+      <stop offset="20%" stop-color="#bfdbfe" />
+      <stop offset="40%" stop-color="#93c5fd" />
+      <stop offset="60%" stop-color="#60a5fa" />
+      <stop offset="80%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg)" />
+  <rect x="52" y="52" width="1096" height="526" rx="28" fill="#ffffff" stroke="#0f172a" stroke-width="8" />
+
+  <text x="96" y="182" fill="#0f172a" font-family="'Arial Black', Impact, sans-serif" font-size="112" letter-spacing="-4">
+    Rang
+  </text>
+  <text x="96" y="258" fill="#334155" font-family="'Trebuchet MS', sans-serif" font-size="34" font-weight="700">
+    Rebuild the shade ramp. Unlock 3, 6, and 10 color levels.
+  </text>
+
+  <g transform="translate(96 332)">
+    <rect width="1008" height="192" rx="28" fill="#ffffff" stroke="#0f172a" stroke-width="8" />
+
+    <rect x="36" y="40" width="120" height="112" rx="18" fill="#dbeafe" stroke="#0f172a" stroke-width="6" />
+    <rect x="156" y="40" width="28" height="112" rx="14" fill="#ffffff" opacity="0.78" />
+
+    <rect x="204" y="40" width="120" height="112" rx="18" fill="#bfdbfe" stroke="#0f172a" stroke-width="6" />
+    <rect x="324" y="40" width="28" height="112" rx="14" fill="#ffffff" opacity="0.78" />
+
+    <rect x="372" y="40" width="120" height="112" rx="18" fill="#93c5fd" stroke="#0f172a" stroke-width="6" />
+    <rect x="492" y="40" width="28" height="112" rx="14" fill="#ffffff" opacity="0.78" />
+
+    <rect x="540" y="40" width="120" height="112" rx="18" fill="#60a5fa" stroke="#0f172a" stroke-width="6" />
+    <rect x="660" y="40" width="28" height="112" rx="14" fill="#ffffff" opacity="0.78" />
+
+    <rect x="708" y="40" width="120" height="112" rx="18" fill="#3b82f6" stroke="#0f172a" stroke-width="6" />
+    <rect x="828" y="40" width="28" height="112" rx="14" fill="#ffffff" opacity="0.78" />
+
+    <rect x="876" y="40" width="96" height="112" rx="18" fill="#1d4ed8" stroke="#0f172a" stroke-width="6" />
+
+    <rect x="36" y="164" width="936" height="12" rx="6" fill="url(#ramp)" />
+  </g>
+</svg>
