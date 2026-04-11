@@ -219,32 +219,37 @@ export function ColorOrderingGame({ theme, onThemeChange }: ColorOrderingGamePro
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="theme-muted flex flex-wrap items-center gap-3 text-sm">
             <span className="neo-chip">
-              Level {currentLevel.id}
-            </span>
-            <span className="neo-chip">
-              {currentLevel.shadeCount} shades
-            </span>
-            <span className="neo-chip">
-              {round.paletteLabel}
-            </span>
-            <span className="neo-chip">
-              {winsLabel}
-            </span>
-            <span className="neo-chip">
               {round.moveCount} {round.moveCount === 1 ? "move" : "moves"}
             </span>
             <span className="neo-chip">
               {formatElapsedTime(elapsedMs)}
+            </span>
+            <span className="neo-chip">
+              {winsLabel}
             </span>
           </div>
 
           <div className="flex shrink-0 items-center gap-3">
             <button
               type="button"
-              className="neo-button px-4 py-3"
+              className="neo-icon-button"
+              aria-label="Reset progress"
+              title="Reset progress"
               onClick={handleResetProgress}
             >
-              Reset Progress
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 12a9 9 0 1 0 2.64-6.36" />
+                <path d="M3 4v6h6" />
+              </svg>
             </button>
             <ThemeToggle value={theme} onChange={onThemeChange} />
           </div>
@@ -252,7 +257,7 @@ export function ColorOrderingGame({ theme, onThemeChange }: ColorOrderingGamePro
 
         <div className="space-y-2">
           <h2 className="font-display text-2xl uppercase leading-[0.96] tracking-[-0.03em] md:text-3xl">
-            Level {currentLevel.id}: {currentLevel.shadeCount} shades.
+            Level {currentLevel.id}.
           </h2>
           <p className="theme-muted max-w-2xl text-sm font-semibold leading-6 md:text-base">
             {nextLevel

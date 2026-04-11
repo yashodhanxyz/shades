@@ -1,3 +1,4 @@
+import { BrandMark } from "./components/BrandMark";
 import { ColorOrderingGame } from "./components/ColorOrderingGame";
 import { useThemePreference } from "./hooks/useThemePreference";
 
@@ -8,10 +9,8 @@ export default function App() {
     <main className="theme-ink min-h-screen px-4 py-6 md:px-8 lg:px-12">
       <div className="mx-auto flex max-w-7xl flex-col gap-5 pb-20">
         <section className="flex min-h-[calc(100vh-3rem)] flex-col items-center justify-center gap-5">
-          <section className="flex max-w-2xl flex-col items-center gap-3 text-center">
-            <p className="neo-chip">
-              Experimental Color Ordering Game
-            </p>
+          <section className="flex max-w-2xl flex-col items-center gap-6 text-center">
+            <BrandMark />
             <h1 className="font-display text-3xl uppercase leading-[0.94] tracking-[-0.04em] md:text-4xl">
               Put the shades back in the right sequence.
             </h1>
@@ -114,13 +113,7 @@ export default function App() {
         href="https://yashodhan.xyz/"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-3 right-3 z-20 rounded-full border-4 px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] transition-transform duration-150 hover:-translate-y-0.5 md:bottom-4 md:right-4"
-        style={{
-          borderColor: "var(--ink)",
-          backgroundColor: "var(--surface)",
-          color: "var(--ink)",
-          boxShadow: "5px 5px 0 var(--ink)",
-        }}
+        className="neo-button fixed bottom-3 right-3 z-20 inline-flex items-center justify-center rounded-full px-3 py-2 text-[10px] md:bottom-4 md:right-4"
       >
         Built by Yashodhan
       </a>
